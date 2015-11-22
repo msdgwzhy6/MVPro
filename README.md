@@ -4,7 +4,7 @@
 《[一种在android中实现MVP模式的新思路](https://github.com/bboyfeiyu/android-tech-frontier/tree/master/androidweekly/%E4%B8%80%E7%A7%8D%E5%9C%A8android%E4%B8%AD%E5%AE%9E%E7%8E%B0MVP%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%96%B0%E6%80%9D%E8%B7%AF)》
 和《[用MVP架构开发Android应用](http://kymjs.com/code/2015/11/09/01/)》两篇文章。
 
-1. Presenter <br />
+### Presenter <br />
 在**MVPro**中，将Activity，Fragment作为Presenter，并且提供了轻量级的ActivityPresenterImpl、FragmentPresenterImpl、FragmentActivityImpl的实现，
 在项目中可以直接继承这些实现去做自己的presenter。<br />
 IPresenter作为Presenter必须要实现的接口，提供的方法有：
@@ -29,7 +29,7 @@ void created(Bundle savedInstance);
 create方法是在setContentView之前调用的，我们可以在该方法中实现例如：`requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);`等工作。<br />
 created方法是在setContentView之后调用，可以根据业务需要做自己的逻辑。
 
-2. View<br />
+### View<br />
 在**MVPro**中，View层必须要实现IView接口，当然**MVPro**也提供了ViewImpl一个轻量级的实现，在我们的项目中完全可以直接继承ViewImpl。
 <br />IView提供的方法有：
 ``` java
@@ -80,7 +80,7 @@ findViewById提供了一个无需类型转换的查找方法，让代码更清�
 bindPresenter设置绑定的Presenter，已经实现。<br />
 bindEvent设置view的各种实现，可以通过EventHelper类轻松的为view设置各种常用的事件。<br />
 
-3. Model<br />
+### Model<br />
 在**MVPro**中并没有提供关于Model的代码，这是因为**MVPro**并不关心你的项目的业务层的实现，这样做的目的是为项目提供更加灵活性的实现方式。
 
 
